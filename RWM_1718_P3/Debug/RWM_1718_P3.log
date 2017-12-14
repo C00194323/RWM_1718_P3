@@ -1,0 +1,11 @@
+﻿  main.cpp
+main.obj : error LNK2019: unresolved external symbol _SDL_CreateWindow referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_PollEvent referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_Init referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_Quit referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _IMG_Init referenced in function _main
+SDL2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+SDL2main.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+SDL2_image.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+SDL2_ttf.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\gameuser\Desktop\RWM_P3\RWM_1718_P3\RWM_1718_P3\Debug\RWM_1718_P3.exe : fatal error LNK1120: 5 unresolved externals
