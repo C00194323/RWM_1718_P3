@@ -1,4 +1,6 @@
-﻿  ColourModifications.cpp
+﻿  ImageLoader.cpp
+  ColourModifications.cpp
 c:\users\gameuser\desktop\rwm_1718_p3\rwm_1718_p3\colourmodifications.cpp(30): warning C4312: 'type cast': conversion from 'int' to 'Uint32 *' of greater size
-  RWM_1718_P3.vcxproj -> C:\Users\gameuser\Desktop\RWM_1718_P3\RWM_1718_P3\x64\Debug\RWM_1718_P3.exe
-  RWM_1718_P3.vcxproj -> C:\Users\gameuser\Desktop\RWM_1718_P3\RWM_1718_P3\x64\Debug\RWM_1718_P3.pdb (Partial PDB)
+  AdjustmentManager.cpp
+  Generating Code...
+  RWM_1718_P3.vcxproj -> C:\Users\gameuser\Desktop\RWM_1718_P3\RWM_1718_P3\x64\Debug\RWM_1718_P3.lib
