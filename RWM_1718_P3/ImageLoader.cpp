@@ -14,6 +14,7 @@ ImageLoader::ImageLoader()
 	m_width = 0;
 	m_pixels=NULL;
 	m_rect = SDL_Rect{ 0,0,0,0 };
+	
 }
 
 
@@ -52,18 +53,31 @@ SDL_Rect ImageLoader::getRect()
 	return m_rect;
 }
 
+SDL_PixelFormat* ImageLoader::Format()
+{
+	return format;
+}
+
+SDL_Surface* ImageLoader::getSurface()
+{
+	return m_ImageSurface;
+}
+
+
+
+
 bool ImageLoader::loadfromfile(std::string name, SDL_Renderer* render)
 {
 
 	SDL_Texture* m_tempTexture = NULL;
-	SDL_Surface* m_ImageSurface = IMG_Load(name.c_str());
+	m_ImageSurface = IMG_Load(name.c_str());
 
 	if (m_ImageSurface == NULL)
 	{
 		printf("Unable to load image %s! SDL_image Error: %s\n", name.c_str(), IMG_GetError());
 	}
 
-	SDL_PixelFormat *format;
+	
 	format = m_ImageSurface->format;
 	
 	std::cout << format << std::endl;
@@ -73,7 +87,7 @@ bool ImageLoader::loadfromfile(std::string name, SDL_Renderer* render)
 	}
 
 
-	m_tempTexture=SDL_CreateTexture(render, SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_STREAMING, m_ImageSurface->w, m_ImageSurface->h);
+	m_tempTexture=SDL_CreateTexture(render,SDL_PIXELFORMAT_RGB24,SDL_TEXTUREACCESS_STREAMING, m_ImageSurface->w, m_ImageSurface->h);
 	
 	//m_tempTexture = SDL_CreateTextureFromSurface(render, m_ImageSurface);
 	
@@ -89,7 +103,8 @@ bool ImageLoader::loadfromfile(std::string name, SDL_Renderer* render)
 	
 
 	// Enables Transparency 
-	SDL_SetTextureBlendMode(m_tempTexture, SDL_BLENDMODE_BLEND);
+	//SDL_SetTextureBlendMode(m_tempTexture, SDL_BLENDMODE_BLEND);
+	
 
 	// Clean Up Surface
 	SDL_FreeSurface(m_ImageSurface);

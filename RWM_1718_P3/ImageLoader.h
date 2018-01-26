@@ -21,11 +21,14 @@ public:
 	int height();
 	int width();
 	int pitch();
-	
+	SDL_PixelFormat* Format();
+	SDL_Surface* getSurface();
 
 private:
 	SDL_Texture* m_Imagetexture;
 	SDL_Rect m_rect;
+	SDL_PixelFormat *format;
+	SDL_Surface* m_ImageSurface;
 	int m_pitch;
 	void* m_pixels;
 	int m_width;

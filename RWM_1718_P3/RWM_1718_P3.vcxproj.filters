@@ -27,6 +27,9 @@
     <ClCompile Include="AdjustmentManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ColourModifications.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImageLoader.h">
@@ -38,7 +41,7 @@
     <ClInclude Include="AdjustmentManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AdjustmentFunctions.h">
+    <ClInclude Include="ColourModifications.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -77,6 +77,7 @@ void Game::DetectEvents()
 						std::cout << "Hue Modified" << std::endl;
 						break;
 					case SDLK_c:
+						m_adjustmentmanager->Contrast();
 						std::cout << "Contrast Modified" << std::endl;
 						break;
 					case SDLK_b:
@@ -85,10 +86,26 @@ void Game::DetectEvents()
 						break;
 					case SDLK_r:
 						m_adjustmentmanager->reset();
+						m_adjustmentmanager->r = 0;
+						m_adjustmentmanager->g = 0;
+						m_adjustmentmanager->b = 0;
 						std::cout << "Image Reset" << std::endl;
 						break;
 					case SDLK_s:
+						m_adjustmentmanager->Saturation();
 						std::cout << "Saturation Modified" << std::endl;
+						break;
+					case SDLK_q:
+						m_adjustmentmanager->r=255;
+						std::cout << "Red Saturated" << std::endl;
+						break;
+					case SDLK_w:
+						m_adjustmentmanager->g=255;
+						std::cout << "Green Saturated" << std::endl;
+						break;
+					case SDLK_e:
+						m_adjustmentmanager->b=255;
+						std::cout << "Blue Saturated " << std::endl;
 						break;
 				}
 			}

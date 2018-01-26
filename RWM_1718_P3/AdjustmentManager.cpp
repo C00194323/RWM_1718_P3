@@ -35,24 +35,29 @@ bool AdjustmentManager::LoadTexture(std::string imageName, SDL_Renderer * render
 
 void AdjustmentManager::Hue()
 {
-	Uint32* tempPixels = ColourModification::ModifyHue(m_temp);
-	SDL_UpdateTexture(m_temp->Texture(), &m_temp->getRect(), tempPixels, m_temp->pitch());
+
 }
 
 void AdjustmentManager::Contrast()
 {
-
+	Uint32* m_tempPixel = new Uint32();
+	m_tempPixel = ColourModifications::ModifyContrast(m_temp);
+	SDL_UpdateTexture(m_temp->Texture(), &m_temp->getRect(), m_tempPixel, m_temp->pitch());
 }
 
 void AdjustmentManager::Brightness()
 {
-	Uint32* tempPixels = ColourModification::ModifyBrightness(m_temp);
-	SDL_UpdateTexture(m_temp->Texture(), &m_temp->getRect(), tempPixels, m_temp->pitch());
+	Uint32* m_tempPixel = new Uint32();
+	m_tempPixel = ColourModifications::ModifyBrightness(m_temp);
+	SDL_UpdateTexture(m_temp->Texture(), &m_temp->getRect(), m_tempPixel, m_temp->pitch());
+	
 }
 
 void AdjustmentManager::Saturation()
 {
-
+	Uint32* m_tempPixel = new Uint32();
+	m_tempPixel = ColourModifications::ModifySaturation(m_temp, r,g,b);
+	SDL_UpdateTexture(m_temp->Texture(), &m_temp->getRect(), m_tempPixel, m_temp->pitch());
 }
 
 // Resets the pixels of the image
@@ -60,6 +65,6 @@ void AdjustmentManager::reset()
 {
 	Uint32* m_resetpixels = new Uint32();
 	m_resetpixels = (Uint32*)m_temp->getPixel();
-
+	SDL_SetTextureColorMod(m_temp->Texture(), 255, 255, 255);
 	SDL_UpdateTexture(m_temp->Texture(), &m_temp->getRect(), m_resetpixels, m_temp->pitch());
 }

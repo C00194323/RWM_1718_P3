@@ -128,13 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AdjustmentManager.cpp" />
+    <ClCompile Include="ColourModifications.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ImageLoader.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AdjustmentFunctions.h" />
     <ClInclude Include="AdjustmentManager.h" />
+    <ClInclude Include="ColourModifications.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ImageLoader.h" />
   </ItemGroup>

@@ -4,6 +4,7 @@
 #include "SDL2\include\SDL_ttf.h"
 #include "ImageLoader.h"
 #include "AdjustmentManager.h"
+#include "ColourModifications.h"
 #include <iostream>
 #include <vector>
 
